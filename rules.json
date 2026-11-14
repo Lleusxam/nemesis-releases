@@ -1,9 +1,9 @@
 {
-  "_comment": "Verified on a Galaxy A07 (2026-11-13): YouTube (all rules) and the Instagram view-id rule. Not verified: the Instagram Reels tab rule (its description could not be read). Capture with scripts/dev/capture-ids.sh (or dumpsys activity top when uiautomator never goes idle).",
+  "_comment": "All rules verified on a Galaxy A07 (2026-11-13/14): YouTube and Instagram. Facebook has no rule yet (needs the app on a test device). Capture with scripts/dev/capture-ids.sh (or dumpsys activity top when uiautomator never goes idle).",
   "schemaVersion": 1,
   "minAppVersion": 1,
-  "rulesetVersion": 2,
-  "updatedAt": "2026-11-13",
+  "rulesetVersion": 3,
+  "updatedAt": "2026-11-14",
   "apps": {
     "com.google.android.youtube": {
       "rules": [
