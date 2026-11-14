@@ -1,8 +1,8 @@
 {
-  "_comment": "UNVERIFIED selectors: written without a device. Capture the real IDs with scripts/dev/capture-ids.sh and fix them before relying on this file.",
+  "_comment": "Verified on a Galaxy A07 (2026-11-13): YouTube (all rules) and the Instagram view-id rule. Not verified: the Instagram Reels tab rule (its description could not be read). Capture with scripts/dev/capture-ids.sh (or dumpsys activity top when uiautomator never goes idle).",
   "schemaVersion": 1,
   "minAppVersion": 1,
-  "rulesetVersion": 1,
+  "rulesetVersion": 2,
   "updatedAt": "2026-11-13",
   "apps": {
     "com.google.android.youtube": {
@@ -18,8 +18,10 @@
         },
         {
           "id": "yt-shorts-tab-selected",
-          "kind": "TEXT",
-          "values": ["Shorts"],
+          "kind": "DESC",
+          "values": [
+            "Shorts"
+          ],
           "requireSelected": true
         }
       ],
@@ -27,7 +29,11 @@
         "enabled": true,
         "pageChanges": 3,
         "windowMs": 20000,
-        "classNames": ["androidx.recyclerview.widget.RecyclerView", "androidx.viewpager2.widget.ViewPager2"]
+        "classNames": [
+          "androidx.recyclerview.widget.RecyclerView",
+          "androidx.viewpager2.widget.ViewPager2",
+          "android.support.v7.widget.RecyclerView"
+        ]
       }
     },
     "com.instagram.android": {
@@ -44,7 +50,9 @@
         {
           "id": "ig-reels-tab-selected",
           "kind": "DESC",
-          "values": ["Reels"],
+          "values": [
+            "Reels"
+          ],
           "requireSelected": true
         }
       ],
@@ -52,7 +60,10 @@
         "enabled": true,
         "pageChanges": 3,
         "windowMs": 20000,
-        "classNames": ["androidx.viewpager.widget.ViewPager", "androidx.recyclerview.widget.RecyclerView"]
+        "classNames": [
+          "androidx.viewpager.widget.ViewPager",
+          "androidx.recyclerview.widget.RecyclerView"
+        ]
       }
     }
   }
