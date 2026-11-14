@@ -1,0 +1,59 @@
+{
+  "_comment": "UNVERIFIED selectors: written without a device. Capture the real IDs with scripts/dev/capture-ids.sh and fix them before relying on this file.",
+  "schemaVersion": 1,
+  "minAppVersion": 1,
+  "rulesetVersion": 1,
+  "updatedAt": "2026-11-13",
+  "apps": {
+    "com.google.android.youtube": {
+      "rules": [
+        {
+          "id": "yt-shorts-player",
+          "kind": "VIEW_ID",
+          "values": [
+            "com.google.android.youtube:id/reel_recycler",
+            "com.google.android.youtube:id/reel_player_page_container"
+          ],
+          "minHeightRatio": 0.6
+        },
+        {
+          "id": "yt-shorts-tab-selected",
+          "kind": "TEXT",
+          "values": ["Shorts"],
+          "requireSelected": true
+        }
+      ],
+      "scrollHeuristic": {
+        "enabled": true,
+        "pageChanges": 3,
+        "windowMs": 20000,
+        "classNames": ["androidx.recyclerview.widget.RecyclerView", "androidx.viewpager2.widget.ViewPager2"]
+      }
+    },
+    "com.instagram.android": {
+      "rules": [
+        {
+          "id": "ig-clips-viewer",
+          "kind": "VIEW_ID",
+          "values": [
+            "com.instagram.android:id/clips_viewer_view_pager",
+            "com.instagram.android:id/clips_swipe_refresh_container"
+          ],
+          "minHeightRatio": 0.6
+        },
+        {
+          "id": "ig-reels-tab-selected",
+          "kind": "DESC",
+          "values": ["Reels"],
+          "requireSelected": true
+        }
+      ],
+      "scrollHeuristic": {
+        "enabled": true,
+        "pageChanges": 3,
+        "windowMs": 20000,
+        "classNames": ["androidx.viewpager.widget.ViewPager", "androidx.recyclerview.widget.RecyclerView"]
+      }
+    }
+  }
+}
